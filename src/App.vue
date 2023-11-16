@@ -6,17 +6,17 @@
 
 <script>
 import headerComponent from './components/Header.vue'
-import footerComponent from './components/Footer.vue'
 import mainComponent from './components/Main.vue'
+import footerComponent from './components/Footer.vue'
 export default {
 	components: {
-		mainComponent, headerComponent, footerComponent
+		headerComponent, mainComponent, footerComponent
 	},
 	data() {
 		return {
 
 		}
-	}
+	},
 }
 </script>
 

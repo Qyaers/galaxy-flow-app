@@ -1,23 +1,22 @@
 <template>
 	<main class="main">
-		<preview></preview>
-		<about></about>
-		<product></product>
-		<howItWorks></howItWorks>
-		<tariff></tariff>
+		<aboutComponent></aboutComponent>
+		<productComponent></productComponent>
+		<howItWorksComponent></howItWorksComponent>
+		<tariffsComponent></tariffsComponent>
 	</main>
 </template>
 
 <script>
-import preview from './PreviewComponent.vue'
-import about from './AboutComponent.vue';
-import product from './ProductComponent.vue';
-import howItWorks from './HotItWorksComponent.vue';
-import tariff from './TariffsComponent.vue';
+import aboutComponent from './AboutComponent.vue';
+import productComponent from './ProductComponent.vue';
+import howItWorksComponent from './HotItWorksComponent.vue';
+import tariffsComponent from './TariffsComponent.vue';
+import footerComponent from './Footer.vue'
 
 export default {
 	components: {
-		preview, about, howItWorks, product, tariff
+		aboutComponent,productComponent,howItWorksComponent, tariffsComponent,footerComponent
 	},
 	data() {
 		return {
@@ -29,8 +28,8 @@ export default {
 </script>
 
 
-<style lang="css">
-.main {
-	flex: 1 1 auto;
-}
+<style lang="sass">
+.main 
+	flex: 1 1 auto
+
 </style>

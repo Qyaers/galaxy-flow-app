@@ -1,17 +1,59 @@
-body,html,h1
-	height: 100%
-	width: 100%
+body,html
+	height: 100vh
+	width: 100vw
 	margin: 0
 	padding: 0
-	text-decoration: none
+	overflow-x: hidden
+	p,h1,h2,a
+		font-family: Roboto,sans-serif
+		font-weight: 700
+		line-height: normal
+		text-decoration: none
+		list-style-type: none
+		margin: 0
+		padding: 0
 
+	h2
+		color: #5C5C5C
+		font-size: 40px
+		margin: 0.5em 0em 0.5em 0em
+	p
+		color: #6E6E73
+		text-indent: 0.5em
+		font-size: 32px
+		font-weight: 700
+		line-height: normal
+		text-align: justify
+		line-height: 50px
+	a
+		color: #6F7073
+		text-align: center
+		font-size: 32px
+		list-style-type: none
+		&:hover
+			color: rgb(171, 190, 215)
+	button
+		cursor: pointer
 #app
 	min-height: 100%
 	display: flex
 	flex-direction: column
-	background-color: black
+	background: #F5F5F7
 
 .container
-	height: 100%
-	width: 1140px
+	display: flex
+	flex-direction: column
+	height: 100vh
+	width: 80vw
 	margin: 0 auto
+
+.btn
+	width: 250px
+	height: 59.998px
+	flex-shrink: 0
+	border-radius: 15px
+	background: rgb(171, 190, 215)
+	box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
+
+.btn.active
+	background-color: rgb(255, 255, 255)
