@@ -4,7 +4,7 @@ body,html
 	margin: 0
 	padding: 0
 	overflow-x: hidden
-	p,h1,h2,a
+	p,h1,h2,h3,a
 		font-family: Roboto,sans-serif
 		font-weight: 700
 		line-height: normal
@@ -12,7 +12,11 @@ body,html
 		list-style-type: none
 		margin: 0
 		padding: 0
-
+	h3
+		color: #ABBED7
+		font-size: 32px
+		font-style: normal
+		line-height: 50px
 	h2
 		color: #5C5C5C
 		font-size: 40px
@@ -43,7 +47,6 @@ body,html
 .container
 	display: flex
 	flex-direction: column
-	height: 100vh
 	width: 80vw
 	margin: 0 auto
 
@@ -54,6 +57,10 @@ body,html
 	border-radius: 15px
 	background: rgb(171, 190, 215)
 	box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
-
+	border: none
+	transition: 0.2s
+	&:hover
+		background: #6E6E73
 .btn.active
 	background-color: rgb(255, 255, 255)
+	cursor: default

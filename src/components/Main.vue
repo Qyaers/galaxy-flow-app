@@ -2,21 +2,21 @@
 	<main class="main">
 		<aboutComponent></aboutComponent>
 		<productComponent></productComponent>
-		<howItWorksComponent></howItWorksComponent>
+		<aboutProductComponent></aboutProductComponent>
 		<tariffsComponent></tariffsComponent>
 	</main>
 </template>
 
 <script>
-import aboutComponent from './AboutComponent.vue';
+import aboutComponent from './About.vue';
 import productComponent from './ProductComponent.vue';
-import howItWorksComponent from './HotItWorksComponent.vue';
+import aboutProductComponent from './AboutProduct.vue';
 import tariffsComponent from './TariffsComponent.vue';
 import footerComponent from './Footer.vue'
 
 export default {
 	components: {
-		aboutComponent,productComponent,howItWorksComponent, tariffsComponent,footerComponent
+		aboutComponent, productComponent, aboutProductComponent, tariffsComponent, footerComponent
 	},
 	data() {
 		return {

@@ -35,7 +35,6 @@ export default {
 .about 
 	display: flex
 	flex-direction: column
-	height: 20vw
 	flex-shrink: 0
-			
+	flex-wrap: wrap
 </style>
