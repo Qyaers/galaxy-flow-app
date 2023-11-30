@@ -21,9 +21,9 @@ export default {
 		return {
 			links: {
 				"О компании": "#about",
-				"Наш продукт": "#about",
-				"Как мы работаем": "#about",
-				"Тарифы": "#about"
+				"Наш продукт": "#product",
+				"Как мы работаем": "#about-product",
+				"Тарифы": "#tariffs"
 			}
 		}
 	}

@@ -1,5 +1,5 @@
 <template>
-	<div class="product container">
+	<div id="product" class="product container">
 		<div class="product__title">
 			<h2>Наш продукт</h2>
 		</div>
