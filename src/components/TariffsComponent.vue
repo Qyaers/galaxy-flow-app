@@ -94,7 +94,6 @@ export default {
 	.card
 		display: flex
 		flex-wrap: wrap
-		background: red
 		height: 60vh
 		width: 22vw
 		border-radius: 30px
@@ -119,7 +118,7 @@ export default {
 	span
 		margin-left: 60%
 		font-size: 21px
-		background: red
+		background: #E30000
 		color: white
 		border-radius: 30px
 		padding: 0 10px
@@ -127,7 +126,7 @@ export default {
 		span
 			margin-left: 50%
 			font-size: 21px
-			background: red
+			background: #E30000
 			color: white
 			border-radius: 30px
 			padding: 0 10px

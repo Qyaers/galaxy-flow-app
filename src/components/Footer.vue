@@ -2,6 +2,7 @@
 	<footer class="footer">
 		<div class="footer__info">
 			<p>ООО “Элемент-Глобал”</p>
+			<p>ИНН: 1800007293</p>
 			<p>© 2023 Galaxy Flow. Все права защищены</p>
 		</div>
 		<div class="footer__social-media">
@@ -36,10 +37,16 @@ export default {
 	p
 		color: white
 		font-size: 18px
+		line-height: 30px
 	&__social-media
 		display: flex
 		flex-direction: row
 		align-items: center
 .social-media-icons
 	padding-left: 0.5vw
+.footer__info
+	p
+		&:last-child
+			margin-top: 20px
+			padding-bottom: 10px
 </style>

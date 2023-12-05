@@ -12,7 +12,7 @@
 		<transition name="bounce">
 			<component :is="currentTab"> </component>
 		</transition>
-		<iframe class="product__view" title="Fin_Flow_Site" width="860" height="580"
+		<iframe class="product__view" title="Fin_Flow_Site" width="1200" height="580"
 			src="https://app.powerbi.com/view?r=eyJrIjoiZjM2ODc0ZWUtOWVmYy00YTQyLTk4M2EtZWJlYzE4ZDE0ZDBlIiwidCI6ImI4MmQ2N2FmLWJmMGQtNGJjOS04Y2QxLWE0ZWQwZTBlMzVjOSIsImMiOjl9&pageName=ReportSectioneb70caf7e92ea1477416"
 			frameborder="0" allowFullScreen="true"></iframe>
 	</div>
