@@ -23,7 +23,8 @@ export default {
 				"О компании": "#about",
 				"Наш продукт": "#product",
 				"Как мы работаем": "#about-product",
-				"Тарифы": "#tariffs"
+				"FAQ": "#faq",
+				"Тарифы": "#tariffs",
 			}
 		}
 	}
@@ -43,8 +44,8 @@ export default {
 	top: 0vh
 	transition: 1s
 	.header-menu__icon
-		width: 8vw
-		height: 8vh
+		max-width: 10%
+		height: 100%
 		flex-shrink: 0
 	.nav
 		width: 100%

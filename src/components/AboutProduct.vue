@@ -4,6 +4,9 @@
 			<div class="ticker-wrapper__first-half">
 				<p>#контролируй бизнес</p>
 				<p>#управляй эффективно </p>
+
+			</div>
+			<div class="ticker-wrapper__second-half">
 				<p>#находи аномалии </p>
 				<p>#прогнозируй</p>
 			</div>
@@ -83,7 +86,7 @@
 				<div class="timeline__ending timeline__component--bg">
 					<h3 class="timeline__title">#Итог</h3>
 					<div class="timeline__paragraph"><span class="">Интерактивный отчёт Power BI </span><img
-							src="../assets/Power BI.png" alt=""></div>
+							src="../assets/PowerBI.png" alt=""></div>
 				</div>
 			</div>
 		</div>
@@ -111,10 +114,9 @@ export default {
 		width: 100%
 		position: relative
 		overflow: hidden
-		div.ticker-wrapper__first-half,div.ticker-wrapper 
+		div.ticker-wrapper__first-half,.ticker-wrapper__second-half 
 			display: flex
 			flex-direction: row
-			justify-content: space-between
 			align-items: center
 			overflow: hidden
 			width: 100%
@@ -124,6 +126,7 @@ export default {
 				color: #6E6E73
 				font-size: 30px
 				text-transform: uppercase
+
 		$duration: 30s
 		.ticker-wrapper__first-half, .ticker-wrapper__second-half 
 			display: flex
@@ -133,7 +136,9 @@ export default {
 			position: absolute
 			top: 0
 			right: 0
-			animation: ticker 8s infinite linear forwards
+			animation: ticker $duration infinite linear forwards
+		.ticker-wrapper__second-half
+			animation: $duration ticker $duration/2 infinite linear forwards
 		@keyframes ticker 
 			0% 
 				transform: translate(100%, 0)

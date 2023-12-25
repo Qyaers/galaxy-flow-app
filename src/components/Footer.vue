@@ -6,10 +6,10 @@
 			<p>© 2023 Galaxy Flow. Все права защищены</p>
 		</div>
 		<div class="footer__social-media">
-			<p>Связаться с нами:</p>
+			<p>Наши контакты:</p>
 			<div class="social-media-items" v-for="(item, index) in image" :key="index">
-				<a href:prevent>
-					<img class="social-media-icons" :src="item" alt="socialmediaimage {{ index }}">
+				<a :href=item.link target="_blank">
+					<img class="social-media-icons" :src="item.icon" alt="socialmediaimage">
 				</a>
 			</div>
 		</div>
@@ -21,9 +21,31 @@
 export default {
 	data() {
 		return {
-			image: ["src/assets/Telgram.png", "src/assets/Viber.png", "src/assets/Whatsapp.png"]
+			image: [
+				{
+					icon: "src/assets/Telgram.png", link: "https://t.me/galaxyflowofficial"
+				},
+				{
+					icon: "src/assets/Viber.png", link: "https://viber://chat?number=+79225201900"
+				},
+				{
+					icon: "src/assets/Whatsapp.png", link: "https://wa.me/79225201900"
+				}
+			]
 		}
-	}
+	},
+	methods: {
+		isMobile() {
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+				this.image[1].link = "http://viber://chat?number=+79225201900";
+			} else {
+				this.image[1].link = "http://viber://chat?number=79225201900";
+			}
+		}
+	},
+	mounted() {
+		this.isMobile();
+	},
 }
 </script>
 <style lang="sass">

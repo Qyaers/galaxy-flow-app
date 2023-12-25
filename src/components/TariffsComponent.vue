@@ -20,32 +20,53 @@
 					</ul>
 					<div v-for="item in tarif.price" class="price-card">
 						<div class="price-month">
-							<p class="card-price__title">{{ item.title[0] }}</p>
-							<p class="card-price__title">{{ item.price[0] }}</p>
+							<p class="price__title">{{ item.title[0] }}</p>
+							<p class="price__price">{{ item.price[0] }}</p>
 						</div>
 						<div class="price-year">
-							<div v-show="!item.hasDiscount">
+							<!-- <div v-show="!item.hasDiscount">
 								<span>Скидка 20%</span>
-							</div>
-							<p class="card-price__title">{{ item.title[1] }}</p>
-							<p class="card-price__title">{{ item.price[1] }}</p>
+							</div> -->
+							<p class="price__title">{{ item.title[1] }}</p>
+							<p class="price__price">{{ item.price[1] }}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="order-btns">
-			<button class="order-btn btn">
+			<button class="order-btn btn" @click="open = true">
 				Купить
 			</button>
-			<button class="order-btn btn">
+			<button class="order-btn btn" @click="open = true">
 				Купить
 			</button>
 		</div>
 	</div>
+	<Teleport to="body">
+		<div v-if="open" class="modal" @click.self="open = false">
+			<div class="modal__window">
+				<div class="modal__close-btn">
+					<button class="close-btn" @click="open = false">X</button>
+				</div>
+				<div class="modal__content">
+					<p>Мы очень рады, что вас заинтересовал наш
+						продукт, если вы хотите его приобрести.
+						Свяжитесь с нами в соц сетях:</p>
+					<ul class="modal__list" v-for="item in modalWindowList">
+						<li class="modal__list-item">{{ item.socialMedia + ":" }} <a :href=item.link target="_blank">{{
+							item.linkText }}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</Teleport>
 </template>
 <script>
+
 export default {
+
 	data() {
 		return {
 			tariffs: [
@@ -58,9 +79,9 @@ export default {
 					],
 					price: [
 						{
-							title: [`Стоимость за месяц`, `Стоимость за год`],
-							price: [`19 900 руб.`, `175 900 руб.`],
-							hasDiscount: false,
+							title: [`Стоимость за месяц`, `Бесплатный тестовый период 10 дней`],
+							price: [`8 000 руб.`],
+							// hasDiscount: false,
 						},
 					],
 					extend: false,
@@ -74,14 +95,33 @@ export default {
 					],
 					price: [
 						{
-							title: [`Стоимость за месяц`, `Стоимость за год`],
-							price: [`19 900 руб.`, `175 900 руб.`],
-							hasDiscount: false,
+							title: [`Стоимость за месяц`, `Бесплатный тестовый период 10 дней`],
+							price: [`10 000 руб.`],
+							// hasDiscount: false,
 						},
 					],
 					extend: true
-				}]
+				}],
+			open: false,
+			modalWindowList: [
+				{ link: "https://t.me/galaxyflowofficial", socialMedia: "Telegram", linkText: "galaxyflowofficial Telegram" },
+				{ link: "https://viber://chat?number=+79225201900", socialMedia: "Viber", linkText: "galaxyflowofficial Viber" },
+				{ link: "https://wa.me/79225201900", socialMedia: "Whatsapp", linkText: "galaxyflowofficial Whatsapp" },
+				{ link: "mailto:element-global18@yandex.ru", socialMedia: "Email", linkText: "element-global18@yandex.ru" },
+			]
 		}
+	},
+	methods: {
+		isMobile() {
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+				this.modalWindowList[1].link = "http://viber://chat?number=+79225201900";
+			} else {
+				this.modalWindowList[1].link = "http://viber://chat?number=79225201900";
+			}
+		}
+	},
+	mounted() {
+		this.isMobile();
 	},
 }
 </script>
@@ -132,7 +172,6 @@ export default {
 			padding: 0 10px
 	.price-card
 		border-top: 5px solid rgba(0, 0, 0, 0.45)
-
 .order-btns
 	margin: 2vh 0vh 2vh 0vh 
 	display: flex
@@ -152,4 +191,45 @@ export default {
 		list-style-type: none
 	li::before
 		content: "- "
+//modal window styles
+.modal
+	position: fixed
+	top: 0
+	height: 100vh
+	width: 100vw
+	z-index: 999
+	background: rgba(0, 0, 0, 0.50)
+	display: flex
+	align-items: center
+	justify-content: center
+	ul,li
+		color: #6E6E73
+		text-indent: 0.5em
+		font-size: 1.25em
+	.modal__window
+		position: fixed
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		border-radius: 2em
+		background: #F5F5F7
+		width: 64vw
+		height: 55vh
+		.modal__close-btn
+			position: absolute
+			top: 10px
+			right: 4%
+			border: none
+			.close-btn
+				border: 1px solid white
+				background: white
+				border-radius: 20px
+				font-size: 1.5em
+				color: black
+				&:hover
+					background: rgba(0, 0, 0, 0.25)
+		.modal__content
+			width: 80%
+			margin: 0 auto
+			margin-top: 5%
 </style>

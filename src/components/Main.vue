@@ -3,6 +3,7 @@
 		<aboutComponent></aboutComponent>
 		<productComponent></productComponent>
 		<aboutProductComponent></aboutProductComponent>
+		<faqComponent></faqComponent>
 		<tariffsComponent></tariffsComponent>
 	</main>
 </template>
@@ -11,12 +12,13 @@
 import aboutComponent from './About.vue';
 import productComponent from './ProductComponent.vue';
 import aboutProductComponent from './AboutProduct.vue';
+import faqComponent from './FAQ.vue';
 import tariffsComponent from './TariffsComponent.vue';
 import footerComponent from './Footer.vue'
 
 export default {
 	components: {
-		aboutComponent, productComponent, aboutProductComponent, tariffsComponent, footerComponent
+		aboutComponent, productComponent, aboutProductComponent, faqComponent, tariffsComponent, footerComponent,
 	},
 	data() {
 		return {
