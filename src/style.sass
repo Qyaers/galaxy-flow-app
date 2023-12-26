@@ -1,8 +1,8 @@
 *
 	box-sizing: border-box
 body,html
-	height: 100vh
-	width: 100vw
+	height: 100%
+	width: 100%
 	margin: 0
 	padding: 0
 	overflow-x: hidden
@@ -54,6 +54,9 @@ body,html
 		line-height: 1.5em
 	button
 		cursor: pointer
+		font-size: 1.5em
+		font-weight: bold
+		color: #6E6E73
 #app
 	min-height: 100vh
 	display: flex
@@ -76,7 +79,7 @@ body,html
 	border: none
 	transition: 0.2s
 	&:hover
-		background: #6E6E73
+		background: rgba(160, 160, 160, 0.902)
 .btn.active
-	background-color: rgb(255, 255, 255)
+	background-color: rgba(255, 255, 255, 0.902)
 	cursor: default

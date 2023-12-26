@@ -50,9 +50,7 @@
 					<button class="close-btn" @click="open = false">X</button>
 				</div>
 				<div class="modal__content">
-					<p>Мы очень рады, что вас заинтересовал наш
-						продукт, если вы хотите его приобрести.
-						Свяжитесь с нами в соц сетях:</p>
+					<p>Для покупки нашего продукта свяжитесь с нами:</p>
 					<ul class="modal__list" v-for="item in modalWindowList">
 						<li class="modal__list-item">{{ item.socialMedia + ":" }} <a :href=item.link target="_blank">{{
 							item.linkText }}</a>
@@ -104,9 +102,9 @@ export default {
 				}],
 			open: false,
 			modalWindowList: [
-				{ link: "https://t.me/galaxyflowofficial", socialMedia: "Telegram", linkText: "galaxyflowofficial Telegram" },
-				{ link: "https://viber://chat?number=+79225201900", socialMedia: "Viber", linkText: "galaxyflowofficial Viber" },
-				{ link: "https://wa.me/79225201900", socialMedia: "Whatsapp", linkText: "galaxyflowofficial Whatsapp" },
+				{ link: "https://t.me/galaxyflowofficial", socialMedia: "Telegram", linkText: "telegram@galaxyflowofficial" },
+				{ link: "https://viber://chat?number=+79225201900", socialMedia: "Viber", linkText: "viber@galaxyflowofficial" },
+				{ link: "https://wa.me/79225201900", socialMedia: "Whatsapp", linkText: "whatsapp@galaxyflowofficial" },
 				{ link: "mailto:element-global18@yandex.ru", socialMedia: "Email", linkText: "element-global18@yandex.ru" },
 			]
 		}
@@ -114,9 +112,9 @@ export default {
 	methods: {
 		isMobile() {
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-				this.modalWindowList[1].link = "http://viber://chat?number=+79225201900";
-			} else {
 				this.modalWindowList[1].link = "http://viber://chat?number=79225201900";
+			} else {
+				this.modalWindowList[1].link = "http://viber://chat?number=+79225201900";
 			}
 		}
 	},
@@ -180,11 +178,9 @@ export default {
 	justify-content: space-around
 	button
 		color: white
-		font-size: 32px
 	button ~ button
-		color: black
+		color: #6E6E71
 		background: white
-		font-size: 32px
 .sub-list
 	padding-left: 0px
 	li
@@ -195,8 +191,8 @@ export default {
 .modal
 	position: fixed
 	top: 0
-	height: 100vh
-	width: 100vw
+	height: 100%
+	width: 100%
 	z-index: 999
 	background: rgba(0, 0, 0, 0.50)
 	display: flex
@@ -205,7 +201,9 @@ export default {
 	ul,li
 		color: #6E6E73
 		text-indent: 0.5em
-		font-size: 1.25em
+		font-size: 1.4em
+		li a
+			font-size: 1em
 	.modal__window
 		position: fixed
 		display: flex
@@ -213,11 +211,11 @@ export default {
 		justify-content: space-between
 		border-radius: 2em
 		background: #F5F5F7
-		width: 64vw
-		height: 55vh
+		width: 60%
+		height: 50%
 		.modal__close-btn
 			position: absolute
-			top: 10px
+			top: 4%
 			right: 4%
 			border: none
 			.close-btn

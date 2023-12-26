@@ -32,7 +32,7 @@ export default {
 	data() {
 		return {
 			mainInfo: [
-				{ title: "Требования", info: ["1C Предприятие", "Компьютер", "Yandex диск"], },
+				{ title: "Требования", info: ["1C Предприятие", "Компьютер", "Яндекс диск"], },
 				{ title: "Цель", info: ["Мониторинг денежных средств в банках и кассе"] },
 				{ title: "Исходные данные", info: ["Обратно-сальдовые ведомости 1C"] },
 				{ title: "Доступ к отчёту", info: ["C компьютера", "C планшета", "C телефона"] }],
@@ -90,6 +90,7 @@ export default {
 			border-radius: 15px
 			margin-right: 19px
 			padding-left: 10px
+			box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
 			.text
 				color: #6E6E73
 				font-family: Roboto,sans-serif

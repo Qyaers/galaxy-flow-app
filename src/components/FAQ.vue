@@ -142,14 +142,15 @@ export default {
 	transition: 0.25s // smooth slide-in */
 	height: 0 // starts collapsed
 	overflow: hidden
-	line-height: 1.5
 	text-align: justify
 	p,ul,li,span
 		color: #6E6E73
-		font-size: 1.25em
 		list-style-type: disc
 	p
+		font-size: 1.25em
 		padding: 0px 20px 0px 20px
+	li
+		font-size: 1.25em
 .toggle-icon
 	font-size: 1.5em
 	font-weight: bold

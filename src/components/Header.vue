@@ -22,7 +22,7 @@ export default {
 			links: {
 				"О компании": "#about",
 				"Наш продукт": "#product",
-				"Как мы работаем": "#about-product",
+				"Как это работает?": "#about-product",
 				"FAQ": "#faq",
 				"Тарифы": "#tariffs",
 			}

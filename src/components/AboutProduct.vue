@@ -13,7 +13,7 @@
 		</div>
 		<div class="info">
 			<div class="info__container container">
-				<h2>Как мы работаем</h2>
+				<h2>Как это работает?</h2>
 				<div class="timeline">
 					<div class="timeline__component">
 						<div class="timeline__date timeline__date--right">
@@ -28,7 +28,7 @@
 					</div>
 					<div class="timeline__component timeline__component--bg">
 						<h3 class="timeline__title">#002</h3>
-						<span class="timeline__paragraph">Настраиваются отчёты в 1С</span>
+						<span class="timeline__paragraph">Выгружаются исходные данные из 1С</span>
 					</div>
 					<div class="timeline__middle">
 						<div class="timeline__point"></div>
@@ -46,11 +46,11 @@
 					</div>
 					<div class="timeline__component timeline__component--bg">
 						<h3 class="timeline__title">#003</h3>
-						<span class="timeline__paragraph">Настраиваются отчёты в 1С</span>
+						<span class="timeline__paragraph">Исходные данные загружаются на сервер</span>
 					</div>
 					<div class="timeline__component timeline__component--bg">
 						<h3 class="timeline__title">#004</h3>
-						<span class="timeline__paragraph">Настраиваются отчёты в 1С</span>
+						<span class="timeline__paragraph">Данные обрабатываются на сервере</span>
 					</div>
 					<div class="timeline__middle">
 						<div class="timeline__point"></div>
@@ -68,23 +68,32 @@
 					</div>
 					<div class="timeline__component timeline__component--bg">
 						<h3 class="timeline__title">#005</h3>
-						<span class="timeline__paragraph">Настраиваются отчёты в 1С</span>
+						<span class="timeline__paragraph">Формируется интерактивный отчёт</span>
 					</div>
 					<div class="timeline__component timeline__component--bg">
 						<h3 class="timeline__title">#006</h3>
-						<span class="timeline__paragraph">Настраиваются отчёты в 1С</span>
+						<span class="timeline__paragraph">Отчёт предоставляется клиенту</span>
 					</div>
 					<div class="timeline__middle">
-						<div class="timeline__point">
+						<div class="timeline__point"></div>
+					</div>
+					<div class="timeline__component">
+						<div class="timeline__date timeline__date">
 						</div>
 					</div>
 					<div class="timeline__component">
-						<div class="timeline__date timeline__date--ending">
+						<div class="timeline__date timeline__date--right">
+						</div>
+					</div>
+					<div class="timeline__middle">
+					</div>
+
+					<div class="timeline__component">
+						<div class="timeline__date timeline__date--right">
 						</div>
 					</div>
 				</div>
-				<div class="timeline__ending timeline__component--bg">
-					<h3 class="timeline__title">#Итог</h3>
+				<div class="timeline__component--bg timeline__ending">
 					<div class="timeline__paragraph"><span class="">Интерактивный отчёт Power BI </span><img
 							src="../assets/PowerBI.png" alt=""></div>
 				</div>
@@ -102,13 +111,18 @@ export default {
 .about-product
 	margin-top: 50px
 	span
+		display: table-cell
+		vertical-align: middle
+		text-align: center
+		width: 10%
+		height: 20%
 		color: #FFF
 		text-align: center
-		font-size: 32px
+		font-size: 1.5em
 		line-height: normal
 	h3
 		color: #FFF
-		font-size: 32px
+		font-size: 1.8em
 	.running-line 
 		height: 5vh
 		width: 100%
@@ -159,10 +173,10 @@ export default {
 	max-width: 100%
 	margin: 0px auto
 	display: grid
-	grid-template-columns: 1fr 3px 1fr
+	grid-template-columns: 1fr 0.2% 1fr
 	
 .timeline__component
-	margin: 0 20px 20px 20px
+	margin: 0 2% 3% 2%
 .timeline__component--bg
 	padding: 1.5em
 	border-radius: 30px

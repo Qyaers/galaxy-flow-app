@@ -12,9 +12,13 @@
 		<transition name="bounce">
 			<component :is="currentTab"> </component>
 		</transition>
-		<iframe class="product__view" title="Report Section" width="1200" height="580"
-			src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYTdhMmQ1N2YtMTE4OC00NzFlLWI0ZDEtMjIyM2U1OTVmMWQ1IiwidCI6ImI4MmQ2N2FmLWJmMGQtNGJjOS04Y2QxLWE0ZWQwZTBlMzVjOSIsImMiOjl9&pageName=ReportSectioneb70caf7e92ea1477416"
-			frameborder="0" allowFullScreen="true"></iframe>
+		<div class="product__title report-title">
+			<h2>Представление отчёта</h2>
+
+			<iframe class="product__view" title="Report Section"
+				src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYTdhMmQ1N2YtMTE4OC00NzFlLWI0ZDEtMjIyM2U1OTVmMWQ1IiwidCI6ImI4MmQ2N2FmLWJmMGQtNGJjOS04Y2QxLWE0ZWQwZTBlMzVjOSIsImMiOjl9&pageName=ReportSectioneb70caf7e92ea1477416"
+				frameborder="0" allowFullScreen="true"></iframe>
+		</div>
 	</div>
 </template>
 <script>
@@ -56,9 +60,6 @@ export default {
 </script>
 <style lang="sass">
 
-.product__view
-	margin: 0 auto
-	margin-top: 2vh
 .current-info-btns
 	display: flex
 	flex-direction: row
@@ -66,7 +67,20 @@ export default {
 	margin-bottom: 5vh
 	.btn
 		margin-left: 3vw
-
+.report-title
+	display: flex
+	flex-direction: column
+	justify-content: center
+	width: 80%
+	height: 100%
+	margin: 0 auto
+	h2
+		position: relative
+		color: #ABBED7
+	.product__view
+		min-width: 80%
+		min-height: 60vh
+		box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
 .bounce-enter-active 
 	animation: bounce-in 1.5s
 
