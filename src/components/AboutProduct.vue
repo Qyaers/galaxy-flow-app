@@ -3,12 +3,13 @@
 		<div class="running-line ticker-wrapper">
 			<div class="ticker-wrapper__first-half">
 				<p>#контролируй бизнес</p>
-				<p>#управляй эффективно </p>
-
+				<p>#управляй эффективно</p>
+				<p>#анализируй данные</p>
 			</div>
 			<div class="ticker-wrapper__second-half">
-				<p>#находи аномалии </p>
-				<p>#прогнозируй</p>
+				<p>#находи аномалии</p>
+				<p>#прогнозируй финансы</p>
+				<p>#отслеживай показатели</p>
 			</div>
 		</div>
 		<div class="info">
@@ -138,9 +139,19 @@ export default {
 			transform: translate(100%, 0)
 			p 
 				color: #6E6E73
-				font-size: 30px
+				font-size: 2em
 				text-transform: uppercase
+				@media screen and (max-width: 1320px)
+					font-size: 1.6em
+					padding-bottom: 20px
 
+				@media screen and (max-width: 1100px)
+					font-size: 1.2em
+					padding-bottom: 20px
+
+				@media screen and (max-width: 800px)
+					font-size: 1em
+					padding-bottom: 20px
 		$duration: 30s
 		.ticker-wrapper__first-half, .ticker-wrapper__second-half 
 			display: flex

@@ -1,5 +1,5 @@
 <template>
-	<div class="bank-and-cash-container container">
+	<div class="credits-and-loans-container container">
 		<div class="main-info">
 			<div class="main-info__text" v-for="item in mainInfo">
 				<h3 class="block-title">
@@ -33,12 +33,12 @@ export default {
 		return {
 			mainInfo: [
 				{ title: "Требования", info: ["1C Предприятие", "7 Zip архиватор", "Яндекс диск"], },
-				{ title: "Цель", info: ["Мониторинг денежных средств в банках и кассе"] },
+				{ title: "Цель", info: ["Отслеживание состояния кредитов и займов"] },
 				{ title: "Исходные данные", info: ["Обратно-сальдовые ведомости 1C"] },
 				{ title: "Доступ к отчёту", info: ["C компьютера", "C планшета", "C телефона"] }],
 			featchersInfo: [
-				{ title: "Особенности", info: ["#Ежедневное обновление", "#Контроль остатков денежных средств", "#Фильтрация по счетам в банках и статьям в кассе"], },
-				{ title: "Фильтры", info: ["По компаниям", "По банковским счетам", "По статьям движения денежных средств"] }
+				{ title: "Особенности", info: ["#Ежедневное обновление", "#Расчёт основного долга и процентов", "#Фильтрация по типу задолженности"], },
+				{ title: "Фильтры", info: ["По компаниям", "По кредиторам", "По типу задолженности"] }
 			]
 		}
 	},
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="sass">
-.bank-and-cash-container
+.credits-and-loans-container
 	display: flex
 	flex-direction: row
 	min-width: 100%

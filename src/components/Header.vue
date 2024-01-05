@@ -52,8 +52,12 @@ export default {
 		display: flex
 		flex-direction: row
 		align-items: center
-		padding-left: 10vw
-
+		padding-left: 10%
+		@media screen and (max-width: 1000px)
+			padding-left: 20px
+		@media screen and (max-width: 800px)
+			padding: 5px
+			margin: 0 auto
 		&__item
 			list-style-type: none
 			&__item>.nav__link 
@@ -63,6 +67,9 @@ export default {
 				padding-right: 2vw
 	.nav__item ~ .nav__item
 		padding-left: 6vw
+		@media screen and (max-width: 800px)
+			padding-left: 20px
+			margin: 0 auto
 .sub-header 
 	min-height: 100vh
 	min-width: 100vw
@@ -78,10 +85,17 @@ export default {
 	background-clip: text
 	-webkit-background-clip: text
 	-webkit-text-fill-color: transparent
-	@media screen and (max-width: 1800px)
-		padding-left: 40vw
-		padding-top: 15vw
+	@media screen and (max-width: 1200px)
+		padding-left: 30%
+		padding-top: 10%
 		font-size: 7em
-	@media screen and (max-width: 1330px) 
-		display: none
+	@media screen and (max-width: 1000px)
+		padding-left: 30%
+		padding-top: 10%
+		font-size: 7em
+	@media screen and (max-width: 800px)
+		font-size: 10em
+		padding: 10%
+		background: linear-gradient(100deg, rgba(205, 50, 240, 0.85) 38.7%, rgba(123, 70, 166, 0.40) 80.75%)
+		background-clip: text
 </style>

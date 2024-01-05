@@ -2,12 +2,12 @@
 	<div id="faq" class="faq__container container">
 	<h2>FAQ</h2>
 		<div class="faq" v-for="(faqItem, index) in faqItems" :key="index" :faq="faqItem">
-			<p class="question" @click="toggleAnswer(index,faqItem)">
-				{{ faqItem.q }}
+			<div class="question" @click="toggleAnswer(index,faqItem)">
+				<p class="question-text">{{ faqItem.q }}</p>
 				<p class="toggle-icon">
 					{{faqItem.isOpen ? "—" : "＋" }}
 				</p>
-			</p>
+			</div>
 			<div class="answer" ref="answer">
 				<p>{{ faqItem.a}}</p>
 				<ul v-if="faqItem.hasOwnProperty('list')" v-for="item in faqItem.list">
@@ -53,7 +53,7 @@ export default {
 				{
 					q: `Сколько времени займёт настройка отчёта и как долго он обновляется?`,
 					a:
-						`Время настройки отчёта зависит от количества подключаемых компаний. Обычно это занимает 1-2 рабочих дня. Время с отправки исходных данных до получения отчёта зависит от размера исходных данные. В среднем отчёт обновляется за 15-30 минут.`
+						`Время настройки отчёта зависит от количества подключаемых компаний. Обычно это занимает 1-2 рабочих дня. Время с отправки исходных данных до получения отчёта зависит от размера исходных данных. В среднем отчёт обновляется за 15-30 минут.`
 				},
 				{
 					q: `Какие сервисы нужны для настройки отчёта?`,
@@ -118,19 +118,37 @@ export default {
 	flex-shrink: 0
 	flex-wrap: wrap
 /* style the FAQ section */
+.faq
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	width: 100%
 .question
+	display: flex
+	flex-direction: row
+	justify-content: space-between
 	margin-top: 20px
 	background: hsl(35 10% 30% / 0.1)
-	font-size: 1.5em
-	text-transform: uppercase
-	cursor: pointer
-	font-weight: bold
 	box-shadow: 0px 4px 0px 0 #88888855
 	padding: 10px 0
 	transition: transform 0.2s
 	position: relative
 	border-radius: 1em
 	padding-left: 0.8vw
+	cursor: pointer
+	.question-text
+		font-size: 1.5em
+		text-transform: uppercase
+		font-weight: bold
+		@media screen and (max-width: 1680px)
+			font-size: 1.25em
+			padding: 10px	
+		@media screen and (max-width: 1200px)
+			font-size: 1em
+			padding: 10px	
+		@media screen and (max-width: 800px)
+			font-size: 0.8em
+			padding: 10px	
 .question:hover
 	background: hsl(35 10% 30% / 0.15)
 
@@ -149,15 +167,30 @@ export default {
 	p
 		font-size: 1.25em
 		padding: 0px 20px 0px 20px
+		
+		@media screen and (max-width: 1680px)
+			font-size: 1.15em
+			padding: 10px	
+		@media screen and (max-width: 1200px)
+			font-size: 1em
+			padding: 10px	
+		@media screen and (max-width: 800px)
+			font-size: 0.8em
+			padding: 10px	
 	li
 		font-size: 1.25em
+		@media screen and (max-width: 1680px)
+			font-size: 1.15em
+		@media screen and (max-width: 1200px)
+			font-size: 1em
+		@media screen and (max-width: 800px)
+			font-size: 0.8em
 .toggle-icon
 	font-size: 1.5em
 	font-weight: bold
-	position: absolute
-	right: 20px
 	display: inline-block
 	line-height: 0.5
 	color: #666
 	margin-top: 15px
+	padding-right: 20px
 </style>

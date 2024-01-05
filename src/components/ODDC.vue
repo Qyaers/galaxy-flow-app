@@ -32,8 +32,8 @@ export default {
 	data() {
 		return {
 			mainInfo: [
-				{ title: "Требования", info: ["1C Предприятие", "Компьютер", "Яндекс диск"], },
-				{ title: "Цель", info: ["Контроль денежных средств"] },
+				{ title: "Требования", info: ["1C Предприятие", "7 Zip архиватор", "Яндекс диск"], },
+				{ title: "Цель", info: ["Контроль денежного потока"] },
 				{ title: "Исходные данные", info: ["Обратно-сальдовые ведомости 1C", "Банковские выписки"] },
 				{ title: "Доступ к отчёту", info: ["C компьютера", "C планшета", "C телефона"] }],
 			featchersInfo: [
@@ -49,20 +49,24 @@ export default {
 .oddc-container
 	display: flex
 	flex-direction: row
+	min-width: 100%
 	min-height: 50%
 	justify-content: space-between
 	align-items: flex-start
-
+	@media screen and (max-width: 1000px)
+		flex-direction: column
 	.main-info
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
+		@media screen and (max-width: 1000px)
+			justify-content: space-around
 		.block-text
 			display: flex
 			flex-direction: column
 			justify-content: space-between
-			width: 354px
-			height: 176.867px
+			width: 325px
+			height: 170px
 			border-radius: 15px
 			background: #FFF
 			box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
@@ -71,15 +75,20 @@ export default {
 			.text
 				color: #6E6E73
 				font-family: Roboto,sans-serif
-				font-size: 29px
+				font-size: 1.6em
 				font-style: normal
 				font-weight: 700
 				text-align: left
 				text-indent: 0
 				padding-top: 10px
+				@media screen and (max-width: 1000px)
+					font-size: 1.4em
 	.featchers-info
 		display: flex
 		flex-direction: row
+		width: 100%
+		@media screen and (max-width: 1000px)
+			justify-content: space-around
 		.block-text
 			display: flex
 			flex-direction: column
@@ -91,12 +100,17 @@ export default {
 			margin-right: 19px
 			padding-left: 10px
 			box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
+			@media screen and (max-width: 1000px)
+				width: 325px
+				height: 380px
 			.text
 				color: #6E6E73
 				font-family: Roboto,sans-serif
-				font-size: 29px
+				font-size: 1.6em
 				font-style: normal
 				font-weight: 700
 				text-align: left
 				text-indent: 0
+				@media screen and (max-width: 1000px)
+					font-size: 1.4em
 </style>

@@ -20,9 +20,14 @@ body,html
 		padding: 0
 	h3
 		color: #ABBED7
-		font-size: 32px
+		// font-size: 32px
+		font-size: 2em
 		font-style: normal
-		line-height: 50px
+		// line-height: 50px
+		line-height: 1.8em
+		@media screen and (max-width: 1000px)
+			font-size: 1.5em
+
 	h2
 		color: #5C5C5C
 		font-size: 2.8em
@@ -34,13 +39,20 @@ body,html
 		font-weight: 700
 		line-height: normal
 		text-align: justify
-		line-height: 50px
+		// line-height: 50px
+		line-height: 1.8em
+		@media screen and (max-width: 1000px)
+			font-size: 1.45em
+		@media screen and (max-width: 800px)
+			font-size: 1.2em
 	a
 		color: #6F7073
 		text-align: center
 		// font-size: 32px
 		font-size: 1.25em
 		list-style-type: none
+		@media screen and (max-width: 1000px)
+			font-size: 1em
 		&:hover
 			color: rgb(171, 190, 215)
 	li
@@ -52,13 +64,16 @@ body,html
 		font-weight: 700
 		// line-height: 30px /* 111.111% */
 		line-height: 1.5em
+		@media screen and (max-width: 800px)
+			font-size: 1.2em
 	button
 		cursor: pointer
 		font-size: 1.5em
 		font-weight: bold
 		color: #6E6E73
 #app
-	min-height: 100vh
+	min-width: 100%
+	min-height: 100%
 	display: flex
 	flex-direction: column
 	background: #F5F5F7
@@ -66,9 +81,10 @@ body,html
 .container
 	display: flex
 	flex-direction: column
-	width: 80vw
+	width: 80%
 	margin: 0 auto
-
+	min-width: 800px
+	padding: 20px
 .btn
 	width: 250px
 	height: 59.998px
