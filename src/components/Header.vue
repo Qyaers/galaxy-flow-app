@@ -35,17 +35,18 @@ export default {
 .header-menu
 	display: flex
 	flex-direction: row
-	height: 9.48vh
+	height: 20%
 	width: 100vw
 	background: rgba(245, 245, 247, 0.75)
 	flex-shrink: 0
 	align-items: center
 	position: sticky
-	top: 0vh
+	top: 0
 	transition: 1s
 	.header-menu__icon
 		max-width: 10%
-		height: 100%
+		max-height: 100%
+		min-height: 20%
 		flex-shrink: 0
 	.nav
 		width: 100%
@@ -71,14 +72,20 @@ export default {
 			padding-left: 20px
 			margin: 0 auto
 .sub-header 
-	min-height: 100vh
+	height: 100vh
 	min-width: 100vw
 	background: url('../assets/subHeaderBG.png')
 	background-size: cover
 	background-repeat: no-repeat
+	@media screen and (max-width: 800px)
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 80vh
+		padding-bottom: 20%
 .sub-header__title
-	padding-left: 14vw
-	padding-top: 10vw
+	padding-left: 20%
+	padding-top: 10%
 	text-align: center
 	font-size: 9.375em
 	background: linear-gradient(74deg, rgba(205, 76, 250, 0.58) 38.7%, rgba(123, 70, 166, 0.60) 80.75%)
@@ -89,13 +96,15 @@ export default {
 		padding-left: 30%
 		padding-top: 10%
 		font-size: 7em
-	@media screen and (max-width: 1000px)
-		padding-left: 30%
-		padding-top: 10%
-		font-size: 7em
 	@media screen and (max-width: 800px)
-		font-size: 10em
+		font-size: 15em
 		padding: 10%
 		background: linear-gradient(100deg, rgba(205, 50, 240, 0.85) 38.7%, rgba(123, 70, 166, 0.40) 80.75%)
+		background-clip: text
+	@media screen and (max-width: 600px)
+		padding: 0
+		padding-top: 50%
+		font-size: 10em
+		background: linear-gradient(100deg, rgba(200, 50, 240, 1) 100%, rgba(123, 70, 166, 0.40) 80.75%)
 		background-clip: text
 </style>

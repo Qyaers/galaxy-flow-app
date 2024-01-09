@@ -20,11 +20,6 @@ export default {
 	components: {
 		aboutComponent, productComponent, aboutProductComponent, faqComponent, tariffsComponent, footerComponent,
 	},
-	data() {
-		return {
-
-		}
-	}
 }
 
 </script>

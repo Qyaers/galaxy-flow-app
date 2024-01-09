@@ -86,6 +86,8 @@ export default {
 		min-height: 60vh
 		box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
 		border-radius: 20px
+		@media screen and (max-width: 800px)
+			min-height: 20vh
 .bounce-enter-active 
 	animation: bounce-in 1.5s
 

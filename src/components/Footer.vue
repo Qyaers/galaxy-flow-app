@@ -4,7 +4,7 @@
 			<div class="footer__info">
 				<p>ООО “Элемент-Глобал”</p>
 				<p>ИНН: 1800007293</p>
-				<p>© 2023-2024 Galaxy Flow. Все права защищены</p>
+				<p>© 2023-{{ currentYear }} Galaxy Flow. Все права защищены</p>
 			</div>
 			<div class="footer__social-media">
 				<p>Наши контакты:</p>
@@ -33,7 +33,7 @@ export default {
 				{
 					icon: "img/whatsapp.png", link: "https://wa.me/79225201900"
 				}
-			]
+			],
 		}
 	},
 	methods: {
@@ -48,6 +48,11 @@ export default {
 	mounted() {
 		this.isMobile();
 	},
+	computed: {
+		currentYear() {
+			return new Date().getFullYear();
+		}
+	}
 }
 </script>
 <style lang="sass">
