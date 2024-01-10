@@ -1,5 +1,5 @@
 <template>
-	<div class="ofr-container container">
+	<div class="ofr-container">
 		<div class="main-info">
 			<div class="main-info__text" v-for="item in mainInfo">
 				<h3 class="block-title">
@@ -52,13 +52,15 @@ export default {
 	min-width: 100%
 	min-height: 50%
 	justify-content: space-between
-	align-items: flex-start
-	@media screen and (max-width: 1000px)
+	grid-column-gap: 30px
+	margin-top: 5vh
+	@media screen and (max-width: 1200px)
 		flex-direction: column
 	.main-info
-		display: flex
-		flex-direction: row
-		flex-wrap: wrap
+		display: grid
+		grid-template-columns: 2fr 2fr
+		grid-column-gap: 20px
+		margin: 0 auto
 		@media screen and (max-width: 1000px)
 			justify-content: space-around
 		.block-text
@@ -66,51 +68,49 @@ export default {
 			flex-direction: column
 			justify-content: space-between
 			width: 325px
-			height: 170px
+			height: 174px
 			border-radius: 15px
 			background: #FFF
 			box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
-			margin-right: 19px
-			padding-left: 10px
+			padding: 10px
+			@media screen and (max-width: 1580px) 
+				width: 100%
+				height: 174px
+			@media screen and (max-width: 1200px) 
+				width: 325px
+				height: 174px
 			.text
-				color: #6E6E73
-				font-family: Roboto,sans-serif
 				font-size: 1.6em
-				font-style: normal
-				font-weight: 700
 				text-align: left
-				text-indent: 0
-				padding-top: 10px
 				@media screen and (max-width: 1000px)
 					font-size: 1.4em
+
 	.featchers-info
-		display: flex
-		flex-direction: row
-		width: 100%
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-column-gap: 20px
+		margin: 0 auto
 		@media screen and (max-width: 1000px)
 			justify-content: space-around
 		.block-text
 			display: flex
 			flex-direction: column
-			justify-content: space-around
-			width: 354px
+			justify-content: space-between
+			width: 325px
 			height: 406px
-			background-color: white
 			border-radius: 15px
-			margin-right: 19px
-			padding-left: 10px
+			background: #FFF
 			box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
-			@media screen and (max-width: 1000px)
+			padding: 10px
+			@media screen and (max-width: 1580px) 
+				width: 100%
+				height: 406px
+			@media screen and (max-width: 1200px) 
 				width: 325px
-				height: 380px
+				height: 406px
 			.text
-				color: #6E6E73
-				font-family: Roboto,sans-serif
 				font-size: 1.6em
-				font-style: normal
-				font-weight: 700
 				text-align: left
-				text-indent: 0
 				@media screen and (max-width: 1000px)
 					font-size: 1.4em
 </style>

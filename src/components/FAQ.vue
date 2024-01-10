@@ -117,7 +117,6 @@ export default {
 	flex-direction: column
 	flex-shrink: 0
 	flex-wrap: wrap
-/* style the FAQ section */
 .faq
 	display: flex
 	flex-direction: column
@@ -146,8 +145,11 @@ export default {
 		@media screen and (max-width: 1200px)
 			font-size: 1em
 			padding: 10px	
+		@media screen and (max-width: 1000px)
+			font-size: 0.85em
+			padding: 10px	
 		@media screen and (max-width: 800px)
-			font-size: 0.8em
+			font-size: 0.825em
 			padding: 10px	
 .question:hover
 	background: hsl(35 10% 30% / 0.15)
@@ -163,30 +165,31 @@ export default {
 	text-align: justify
 	p,ul,li,span
 		color: #6E6E73
+		margin: 0
 		list-style-type: disc
 	p
 		font-size: 1.25em
-		padding: 0px 20px 0px 20px
-		
+		padding: 5px 20px 5px 20px
 		@media screen and (max-width: 1680px)
 			font-size: 1.15em
-			padding: 10px	
 		@media screen and (max-width: 1200px)
 			font-size: 1em
-			padding: 10px	
+			padding-right: 20px
 		@media screen and (max-width: 800px)
-			font-size: 0.8em
-			padding: 10px	
+			font-size: 1em
+			padding-right: 20px
 	li
 		font-size: 1.25em
 		@media screen and (max-width: 1680px)
 			font-size: 1.15em
 		@media screen and (max-width: 1200px)
 			font-size: 1em
+			padding-right: 20px
 		@media screen and (max-width: 800px)
-			font-size: 0.8em
+			font-size: 1em
+			padding-right: 20px
 .toggle-icon
-	font-size: 1.5em
+	font-size: 1em
 	font-weight: bold
 	display: inline-block
 	line-height: 0.5

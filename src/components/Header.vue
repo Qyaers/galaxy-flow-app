@@ -36,7 +36,7 @@ export default {
 	display: flex
 	flex-direction: row
 	height: 20%
-	width: 100vw
+	max-width: 100%
 	background: rgba(245, 245, 247, 0.75)
 	flex-shrink: 0
 	align-items: center
@@ -49,28 +49,17 @@ export default {
 		min-height: 20%
 		flex-shrink: 0
 	.nav
-		width: 100%
+		width: 100% 
 		display: flex
 		flex-direction: row
 		align-items: center
-		padding-left: 10%
-		@media screen and (max-width: 1000px)
-			padding-left: 20px
-		@media screen and (max-width: 800px)
-			padding: 5px
-			margin: 0 auto
+		justify-content: space-around
+		padding-right: 5px
 		&__item
 			list-style-type: none
 			&__item>.nav__link 
 				text-decoration: none
 				color: white
-			&:last-child
-				padding-right: 2vw
-	.nav__item ~ .nav__item
-		padding-left: 6vw
-		@media screen and (max-width: 800px)
-			padding-left: 20px
-			margin: 0 auto
 .sub-header 
 	height: 100vh
 	min-width: 100vw
@@ -81,7 +70,7 @@ export default {
 		display: flex
 		justify-content: center
 		align-items: center
-		height: 80vh
+		min-height: 50vh
 		padding-bottom: 20%
 .sub-header__title
 	padding-left: 20%
@@ -92,19 +81,26 @@ export default {
 	background-clip: text
 	-webkit-background-clip: text
 	-webkit-text-fill-color: transparent
+	@media screen and (max-width: 1300px)
+		padding-left: 35%
+		padding-top: 10%
+		font-size: 7.5em
+		background: linear-gradient(74deg, rgba(205, 76, 250, 0.58) 38.7%, rgba(123, 70, 166, 0.60) 80.75%)
+		background-clip: text
 	@media screen and (max-width: 1200px)
 		padding-left: 30%
 		padding-top: 10%
 		font-size: 7em
-	@media screen and (max-width: 800px)
-		font-size: 15em
-		padding: 10%
+		background: linear-gradient(74deg, rgba(205, 76, 250, 0.58) 38.7%, rgba(123, 70, 166, 0.60) 80.75%)
+		background-clip: text
+	@media screen and (max-width: 1100px)
+		font-size: 12em
+		padding: 8%
 		background: linear-gradient(100deg, rgba(205, 50, 240, 0.85) 38.7%, rgba(123, 70, 166, 0.40) 80.75%)
 		background-clip: text
-	@media screen and (max-width: 600px)
-		padding: 0
-		padding-top: 50%
-		font-size: 10em
-		background: linear-gradient(100deg, rgba(200, 50, 240, 1) 100%, rgba(123, 70, 166, 0.40) 80.75%)
+	@media screen and (max-width: 800px)
+		font-size: 12em
+		padding: 8%
+		background: linear-gradient(100deg, rgba(205, 50, 240, 0.85) 38.7%, rgba(123, 70, 166, 0.40) 80.75%)
 		background-clip: text
 </style>

@@ -1,7 +1,7 @@
 *
 	box-sizing: border-box
 body,html
-	height: 100%
+	min-height: 100%
 	min-width: 800px
 	margin: 0
 	padding: 0
@@ -32,7 +32,6 @@ body,html
 		margin: 0.5em 0em 0.5em 0em
 	p
 		color: #6E6E73
-		text-indent: 0.5em
 		font-size: 2em
 		font-weight: 700
 		line-height: normal
@@ -41,9 +40,7 @@ body,html
 		@media screen and (max-width: 1000px)
 			font-size: 1.45em
 		@media screen and (max-width: 800px)
-			font-size: 1.2em
-		@media screen and (max-width: 600px)
-			font-size: 1em
+			font-size: 1.5em
 	a
 		color: #6F7073
 		text-align: center
@@ -52,6 +49,10 @@ body,html
 		list-style-type: none
 		@media screen and (max-width: 1000px)
 			font-size: 1em
+		@media screen and (max-width: 600px)
+			font-size: 0.75em
+		@media screen and (max-width: 400px)
+			font-size: 0.65em
 		&:hover
 			color: rgb(171, 190, 215)
 	li
@@ -61,8 +62,14 @@ body,html
 		font-style: normal
 		font-weight: 700
 		line-height: 1.5em
-		@media screen and (max-width: 800px)
+		@media screen and (max-width: 1200px)
 			font-size: 1.2em
+		@media screen and (max-width: 800px)
+			font-size: 1em
+		@media screen and (max-width: 600px)
+			font-size: 1.5em
+		@media screen and (max-width: 400px)
+			font-size: 2em
 	button
 		cursor: pointer
 		font-size: 1.5em
@@ -78,10 +85,12 @@ body,html
 .container
 	display: flex
 	flex-direction: column
-	width: 80%
+	max-width: 80%
 	margin: 0 auto
-	min-width: 800px
 	padding: 20px
+	@media screen and (max-width: 1200px)
+		max-width: 100%
+
 .btn
 	width: 250px
 	height: 59.998px

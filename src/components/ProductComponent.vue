@@ -66,11 +66,16 @@ export default {
 	display: flex
 	flex-direction: row
 	justify-content: center
-	margin-bottom: 5vh
 	.btn
 		margin-left: 3vw
-		min-height: 15%
+		max-height: 15%
+		min-height: 10%
 		max-width: 22.5%
+		@media screen and (max-width: 780px)
+			font-size: 1em
+		@media screen and (max-width: 400px)
+			font-size: 1.15em
+			
 .product__report
 	display: flex
 	flex-direction: column
@@ -87,7 +92,8 @@ export default {
 		box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
 		border-radius: 20px
 		@media screen and (max-width: 800px)
-			min-height: 20vh
+			min-height: 60vh
+			min-width: 100%
 .bounce-enter-active 
 	animation: bounce-in 1.5s
 

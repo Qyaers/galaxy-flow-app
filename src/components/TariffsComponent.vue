@@ -88,19 +88,9 @@ export default {
 		}
 	},
 	methods: {
-		isMobile() {
-			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-				this.modalWindowList[1].link = "viber://add?number=79225201900";
-			} else {
-				this.modalWindowList[1].link = "viber://chat?number=+79225201900";
-			}
-		},
 		openOrderForm() {
 			window.open("https://yandex.ru/business/widget/request/company/134561867869", "_blank", `width=${window.innerWidth / 2}, height=${window.innerHeight / 1.2}, top=${window.innerHeight / 10}, left=${window.innerWidth / 4}`);
 		}
-	},
-	mounted() {
-		this.isMobile();
 	},
 }
 </script>
