@@ -32,14 +32,24 @@
 			</div>
 		</div>
 		<div class="order-btns">
-			<button class="order-btn btn" @click="openOrderForm">
+			<button class="order-btn btn" @click="open = true">
 				Купить
 			</button>
-			<button class="order-btn btn" @click="openOrderForm">
+			<button class="order-btn btn" @click="open = true">
 				Купить
 			</button>
 		</div>
 	</div>
+	<Teleport to="body">
+		<div v-if="open" class="modal-mask" @click.self="open = false">
+			<div class="modal-window">
+				<button class="modal-window__close-btn" @click="open = false">X</button>
+				<iframe class="modal-window__iframe" title="Report Section"
+					src="https://yandex.ru/business/widget/request/company/134561867869" frameborder="0"
+					allowFullScreen="true"></iframe>
+			</div>
+		</div>
+	</Teleport>
 </template>
 <script>
 
@@ -78,16 +88,64 @@ export default {
 					],
 					extend: true
 				}],
+			open: false
 		}
 	},
 	methods: {
-		openOrderForm() {
-			window.open("https://yandex.ru/business/widget/request/company/134561867869", "_blank", `width=${window.innerWidth / 2}, height=${window.innerHeight / 1.2}, top=${window.innerHeight / 10}, left=${window.innerWidth / 4}`);
-		}
+		//unused method for open new page with contact form
+		// openOrderForm() {
+		// 	window.open("https://yandex.ru/business/widget/request/company/134561867869", "_blank", `width=${window.innerWidth / 2}, height=${window.innerHeight / 1.2}, top=${window.innerHeight / 10}, left=${window.innerWidth / 4}`);
+		// }
 	},
 }
 </script>
 <style lang="sass">
+.modal-mask
+	position: fixed
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 9998
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, 0.5)
+	display: table
+	transition: opacity 0.3s ease
+.modal-window
+	position: relative
+	display: flex
+	border-radius: 20px
+	flex-direction: column
+	margin-left: 20%
+	margin-top: 2%
+	background-color: white
+	height: 90%
+	width: 60%
+	@media screen and (max-width: 1000px)
+		top: 2%
+	@media screen and (max-width: 700px)
+		height: 90vh
+		width: 60%
+		margin-top: 20%
+	@media screen and (max-width: 500px)
+		height: 90vh
+		width: 80%
+		margin-left: 10%
+		margin-top: 30%
+	@media screen and (max-width: 500px)
+		margin-top: 50%
+	.modal-window__close-btn
+		width: 5%
+		margin-left: 94%
+		border: none
+		background-color: white
+		border-radius: 20px
+	.modal-window__iframe
+		margin: 0 auto
+		min-height: 90%
+		width: 100%
 .tariffs__cards
 	display: flex
 	height: 100%

@@ -4,6 +4,7 @@
 			<div class="footer__info">
 				<p>ООО “Элемент-Глобал”</p>
 				<p>ИНН: 1800007293</p>
+				<p>Icons by <a href="https://icons8.com/">Icons8</a></p>
 				<p>© 2023-{{ currentYear }} Galaxy Flow. Все права защищены</p>
 			</div>
 			<div class="footer__social-media">
@@ -73,6 +74,11 @@ export default {
 		color: white
 		font-size: 1em
 		line-height: 30px
+		a
+			color: white
+			font-size: 1em
+			line-height: 30px
+			text-decoration: underline
 	@media screen and (max-width: 800px)
 		font-size: 0.85em
 		justify-content: space-around
@@ -89,9 +95,10 @@ export default {
 			max-width: 80px
 			max-height: 80px
 .footer__info
+	display: flex
+	flex-direction: column
 	p
 		&:last-child
-			margin-top: 20px
 			padding-bottom: 10px
 			@media screen and (max-width: 800px)
 				font-size: 0.85em
