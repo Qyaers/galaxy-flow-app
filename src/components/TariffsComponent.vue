@@ -78,13 +78,6 @@ export default {
 					],
 					extend: true
 				}],
-			open: false,
-			modalWindowList: [
-				{ link: "https://t.me/galaxyflowofficial", socialMedia: "Telegram", linkText: "telegram@galaxyflowofficial" },
-				{ link: "viber://chat?number=+79225201900", socialMedia: "Viber", linkText: "viber@galaxyflowofficial" },
-				{ link: "https://wa.me/79225201900", socialMedia: "Whatsapp", linkText: "whatsapp@galaxyflowofficial" },
-				{ link: "mailto:element-global18@yandex.ru", socialMedia: "Email", linkText: "element-global18@yandex.ru" },
-			]
 		}
 	},
 	methods: {

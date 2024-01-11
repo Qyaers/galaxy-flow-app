@@ -8,10 +8,12 @@
 			</div>
 			<div class="footer__social-media">
 				<p>Наши контакты:</p>
-				<div class="social-media-items" v-for="(item, index) in  image " :key="index">
-					<a :href=item.link target="_blank">
-						<img class="social-media-icons" :src="item.icon" alt="socialmediaimage">
-					</a>
+				<div class="social-media__icons">
+					<div class="icons-items" v-for="(item, index) in  image " :key="index">
+						<a :href=item.link target="_blank">
+							<img class="icons__item" :src="item.icon" alt="socialmediaimage">
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -32,6 +34,9 @@ export default {
 				},
 				{
 					icon: "img/whatsapp.png", link: "https://wa.me/79225201900"
+				},
+				{
+					icon: "img/email.png", link: "mailto:element-global18@yandex.ru"
 				}
 			],
 		}
@@ -73,10 +78,16 @@ export default {
 		justify-content: space-around
 	.footer__social-media
 		display: flex
+		flex-direction: column
+		align-items: center
+	.social-media__icons
+		display: flex
 		flex-direction: row
 		align-items: center
-.social-media-icons
-	padding-left: 0.5vw
+		.icons__item
+			padding-left: 0.5vw
+			max-width: 80px
+			max-height: 80px
 .footer__info
 	p
 		&:last-child
