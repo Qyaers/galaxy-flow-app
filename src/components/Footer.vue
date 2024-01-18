@@ -12,7 +12,7 @@
 				<div class="social-media__icons">
 					<div class="icons-items" v-for="(item, index) in  image " :key="index">
 						<a :href=item.link target="_blank">
-							<img class="icons__item" :src="item.icon" alt="socialmediaimage">
+							<img class="icons__item" :onclick="item.event" :src="item.icon" alt="socialmediaimage">
 						</a>
 					</div>
 				</div>
@@ -28,16 +28,16 @@ export default {
 		return {
 			image: [
 				{
-					icon: "img/telegram.png", link: "https://t.me/galaxyflowofficial"
+					icon: "img/telegram.png", link: "https://t.me/galaxyflowofficial", event: "ym(96037055,'reachGoal','telegram');"
 				},
 				{
-					icon: "img/viber.png", link: "viber://chat?number=+79225201900"
+					icon: "img/viber.png", link: "viber://chat?number=+79225201900", event: "ym(96037055,'reachGoal','viber');"
 				},
 				{
-					icon: "img/whatsapp.png", link: "https://wa.me/79225201900"
+					icon: "img/whatsapp.png", link: "https://wa.me/79225201900", event: "ym(96037055,'reachGoal','whatsapp');"
 				},
 				{
-					icon: "img/email.png", link: "mailto:element-global18@yandex.ru"
+					icon: "img/email.png", link: "mailto:element-global18@yandex.ru", event: "ym(96037055,'reachGoal','email');"
 				}
 			],
 		}

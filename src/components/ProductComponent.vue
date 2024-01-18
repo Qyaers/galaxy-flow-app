@@ -3,6 +3,9 @@
 		<div class="product__title">
 			<h2>Наш продукт</h2>
 		</div>
+		<div class="product__items">
+			<productItemComponent v-for="item in productInfoItems" :item="item" :key="index"></productItemComponent>
+		</div>
 		<div class="current-info-btns">
 			<button v-for="tab in tabs" :class="['btn', { active: currentTab === tab.component }]"
 				@click="changeComponent(tab.component)" :disabled="tab.disabledBtn">
@@ -21,12 +24,15 @@
 	</div>
 </template>
 <script>
+import productItemComponent from '../components/ProductItem.vue';
 import ofrComponent from '../components/OFR.vue';
 import oddcComponent from '../components/ODDC.vue';
 import bankAndCashComponent from '../components/BankAndCash.vue';
 import creditsAndLoansComponent from '../components/CreditsAndLoans.vue';
+
 export default {
 	components: {
+		productItemComponent,
 		ofrComponent,
 		oddcComponent,
 		bankAndCashComponent,
@@ -40,6 +46,38 @@ export default {
 				{ text: "ОДДС", component: "oddcComponent", disabledBtn: false },
 				{ text: "Банк и касса", component: "bankAndCashComponent", disabledBtn: false },
 				{ text: "Кредиты и займы", component: "creditsAndLoansComponent", disabledBtn: false },
+			],
+			productInfoItems: [
+				{
+					title: "Особенности продукта",
+					text: "Ваши данные в интерактивном формате. Бесплатная настройка. Бесплатная поддержка",
+					class: "item-direction",
+					img: "img/Dashboard.png"
+				},
+				{
+					title: "Консолидируй данные",
+					text: "В отчёте можно объединить данные  по неограниченному количеству компаний",
+					class: "item-direction-reverse",
+					img: "img/Calculator.png"
+				},
+				{
+					title: "Увеличь эффективность бизнеса",
+					text: "Отслеживай финансовые показатели компании, контролируй банк и кассу, следи за кредитами и займами",
+					class: "item-direction",
+					img: "img/Data.png"
+				},
+				{
+					title: "Защита информации",
+					text: "На каждом этапе формирования отчёта ваша информация под защитой. Все файлы при передаче шифруются",
+					class: "item-direction-reverse",
+					img: "img/Protection.png"
+				},
+				{
+					title: "Соответствие стандартам РСБУ",
+					text: "Исходные данные для отчёта формируются в 1С Предприятие в соответствии с учётной политикой компании",
+					class: "item-direction",
+					img: "img/BD.png"
+				},
 			],
 			disabledBtn: true
 		}
@@ -61,7 +99,10 @@ export default {
 }
 </script>
 <style lang="sass">
-
+.product__items
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
 .current-info-btns
 	display: flex
 	flex-direction: row

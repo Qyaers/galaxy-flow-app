@@ -1,18 +1,17 @@
 <template>
-	<div class="header">
-		<header class="header-menu">
+	<header class="header">
+		<div class="header-menu">
 			<img class="header-menu__icon" src="../assets/logo.png" alt="logo">
 			<nav class="nav">
 				<li class="nav__item" v-for="(item, index) in  links " :key="index">
 					<a class="nav__link" :href="item">{{ index }}</a>
 				</li>
 			</nav>
-
-		</header>
+		</div>
 		<div class="sub-header">
 			<h1 class="sub-header__title">Galaxy Flow</h1>
 		</div>
-	</div>
+	</header>
 </template>
 
 <script>
@@ -36,7 +35,7 @@ export default {
 	display: flex
 	flex-direction: row
 	height: 20%
-	max-width: 100%
+	width: 100%
 	background: rgba(245, 245, 247, 0.75)
 	flex-shrink: 0
 	align-items: center
@@ -62,7 +61,7 @@ export default {
 				color: white
 .sub-header 
 	height: 100vh
-	min-width: 100vw
+	width: 100%
 	background: url('../assets/subHeaderBG.png')
 	background-size: cover
 	background-repeat: no-repeat

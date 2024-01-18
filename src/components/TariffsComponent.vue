@@ -32,16 +32,16 @@
 			</div>
 		</div>
 		<div class="order-btns">
-			<button class="order-btn btn" @click="open = true">
+			<button class="order-btn btn button1" @click="open = true" onclick="ym(96037055, 'reachGoal', 'button1')">
 				Купить
 			</button>
-			<button class="order-btn btn" @click="open = true">
+			<button class="order-btn btn button2" @click="open = true" onclick="ym(96037055, 'reachGoal', 'button2')">
 				Купить
 			</button>
 		</div>
 	</div>
 	<Teleport to="body">
-		<div v-if="open" class="modal-mask" @click.self="open = false">
+		<div v-show="open" class="modal-mask" @click.self="open = false">
 			<div class="modal-window">
 				<button class="modal-window__close-btn" @click="open = false">X</button>
 				<iframe class="modal-window__iframe" title="Report Section"
@@ -52,7 +52,6 @@
 	</Teleport>
 </template>
 <script>
-
 export default {
 
 	data() {
@@ -91,12 +90,6 @@ export default {
 			open: false
 		}
 	},
-	methods: {
-		//unused method for open new page with contact form
-		// openOrderForm() {
-		// 	window.open("https://yandex.ru/business/widget/request/company/134561867869", "_blank", `width=${window.innerWidth / 2}, height=${window.innerHeight / 1.2}, top=${window.innerHeight / 10}, left=${window.innerWidth / 4}`);
-		// }
-	},
 }
 </script>
 <style lang="sass">
@@ -123,6 +116,7 @@ export default {
 	background-color: white
 	height: 90%
 	width: 60%
+	overflow: hidden
 	@media screen and (max-width: 1000px)
 		top: 2%
 	@media screen and (max-width: 700px)
