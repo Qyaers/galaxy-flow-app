@@ -100,11 +100,11 @@ export default {
 			}
 			faqItem.isOpen = !faqItem.isOpen
 		},
-		collapse(index, faqItem) {
+		collapse(index) {
 			const answer = this.$refs.answer[index];
 			answer.style.height = 0;
 		},
-		expand(index, faqItem) {
+		expand(index) {
 			const answer = this.$refs.answer[index];
 			answer.style.height = answer.scrollHeight + "px";
 		}

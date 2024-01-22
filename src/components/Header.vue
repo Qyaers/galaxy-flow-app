@@ -62,7 +62,7 @@ export default {
 .sub-header 
 	height: 100vh
 	width: 100%
-	background: url('../assets/subHeaderBG.png')
+	background-image: url('../assets/subHeaderBG.png')
 	background-size: cover
 	background-repeat: no-repeat
 	@media screen and (max-width: 800px)

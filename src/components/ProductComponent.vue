@@ -3,8 +3,23 @@
 		<div class="product__title">
 			<h2>Наш продукт</h2>
 		</div>
-		<div class="product__items">
-			<productItemComponent v-for="item in productInfoItems" :item="item" :key="index"></productItemComponent>
+		<video class="product__preview-vid" preload loop autoplay muted>
+			<source src="../assets/mainView.mp4">
+		</video>
+		<div class="product__feat">
+			<div class="feat__container" v-for="item in featchers" :key="index">
+				<img class="feat__img" src="../assets/featImg.png" alt="иконка фичи">
+				<div class="feat__text">
+					<p>{{ item }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="product__about">
+			<productItemComponent v-for="(item, index) in productInfoItems" :item="item" :key="index"></productItemComponent>
+		</div>
+		<div class="product__requirements">
+			<productRequirementsComponent :requirements="productRequirements">
+			</productRequirementsComponent>
 		</div>
 		<div class="current-info-btns">
 			<button v-for="tab in tabs" :class="['btn', { active: currentTab === tab.component }]"
@@ -15,8 +30,15 @@
 		<transition name="bounce">
 			<component :is="currentTab"> </component>
 		</transition>
-		<div class="product__report">
-			<h3>Пример финансового отчёта Fin Flow</h3>
+		<div class="product__report-toogle" @click="toggleFinReport()">
+			<h3 class="question-text">Пример финансового отчёта Fin Flow</h3>
+			<p class="toggle-icon">
+				{{ this.isOpen ? "—" : "＋" }}
+			</p>
+
+		</div>
+		<div ref="product_report" class="product__report">
+			<p>*если не загружается отчёт попробуйте переключить сеть с Wifi на мобильную или наоборот</p>
 			<iframe class="report-view" title="Report Section"
 				src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYTdhMmQ1N2YtMTE4OC00NzFlLWI0ZDEtMjIyM2U1OTVmMWQ1IiwidCI6ImI4MmQ2N2FmLWJmMGQtNGJjOS04Y2QxLWE0ZWQwZTBlMzVjOSIsImMiOjl9&pageName=ReportSectioneb70caf7e92ea1477416"
 				frameborder="0" allowFullScreen="true"></iframe>
@@ -25,6 +47,7 @@
 </template>
 <script>
 import productItemComponent from '../components/ProductItem.vue';
+import productRequirementsComponent from '../components/ProductRequirements.vue'
 import ofrComponent from '../components/OFR.vue';
 import oddcComponent from '../components/ODDC.vue';
 import bankAndCashComponent from '../components/BankAndCash.vue';
@@ -33,6 +56,7 @@ import creditsAndLoansComponent from '../components/CreditsAndLoans.vue';
 export default {
 	components: {
 		productItemComponent,
+		productRequirementsComponent,
 		ofrComponent,
 		oddcComponent,
 		bankAndCashComponent,
@@ -40,6 +64,25 @@ export default {
 	},
 	data() {
 		return {
+			featchers: [
+				"Принимайте ключевые решения на основе аналитики",
+				"Финансы компании в единой форме",
+				"Удобный  интерактивный отчёт"
+			],
+			productRequirements: [
+				{
+					title: "Условия подключения",
+					info: ["1C Предприятие", "Бухгалтер", "Яндекс диск"]
+				},
+				{
+					title: "Доступ с устройств",
+					info: ["Компьютер", "Планшет", "Смартфон"]
+				},
+				{
+					title: "Иходные данные",
+					info: ["Оборотно-сальдовоые ведомости 1С", "Банковские выписки"]
+				},
+			],
 			currentTab: "ofrComponent",
 			tabs: [
 				{ text: "ОФР", component: "ofrComponent", disabledBtn: true },
@@ -50,7 +93,7 @@ export default {
 			productInfoItems: [
 				{
 					title: "Особенности продукта",
-					text: "Ваши данные в интерактивном формате. Бесплатная настройка. Бесплатная поддержка",
+					text: "Данные из 1С в интерактивном формате. Бесплатная настройка. Бесплатная поддержка",
 					class: "item-direction",
 					img: "img/Dashboard.png"
 				},
@@ -79,7 +122,8 @@ export default {
 					img: "img/BD.png"
 				},
 			],
-			disabledBtn: true
+			disabledBtn: true,
+			isOpen: false
 		}
 	},
 	methods: {
@@ -95,52 +139,107 @@ export default {
 				}
 			}
 		},
+		toggleFinReport(itemClass) {
+			let toogledItem = document.querySelectorAll(`.${itemClass}`)
+			if (this.isOpen) {
+				this.collapse();
+			} else {
+				this.expand();
+			}
+			this.isOpen = !this.isOpen
+		},
+		collapse() {
+			const item = this.$refs.product_report;
+			item.style.height = 0;
+		},
+		expand() {
+			const item = this.$refs.product_report;
+			item.style.height = 100 + "%";
+		}
 	},
+
 }
 </script>
 <style lang="sass">
-.product__items
-	display: flex
-	flex-direction: column
-	justify-content: space-evenly
-.current-info-btns
-	display: flex
-	flex-direction: row
-	justify-content: center
-	.btn
-		margin-left: 3vw
-		max-height: 15%
-		min-height: 10%
-		max-width: 22.5%
-		@media screen and (max-width: 780px)
-			font-size: 1em
-		@media screen and (max-width: 400px)
-			font-size: 1.15em
-			
-.product__report
-	display: flex
-	flex-direction: column
-	justify-content: center
-	width: 100%
-	height: 100%
-	margin-top: 3%
-	h3
-		position: relative
-		color: #ABBED7
-	.report-view
-		min-width: 80%
-		min-height: 60vh
-		box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
+	.product__preview-vid
+		height: 100%
 		border-radius: 20px
-		@media screen and (max-width: 800px)
-			min-height: 60vh
-			min-width: 100%
-.bounce-enter-active 
-	animation: bounce-in 1.5s
+		width: 100%
+		padding: 0
+		margin: 0 auto
+		@media screen and (max-width: 1100px)
+			width: 100%
+	.product__feat,.feat__container
+		display: flex
+		flex-direction: row
+		justify-content: space-around
+		align-items: center
+		padding: 10px
+		p
+			font-size: 1.1em
+			text-align: center
+	.product__about
+		display: flex
+		flex-direction: column
+		justify-content: space-evenly
+	.current-info-btns
+		display: flex
+		flex-direction: row
+		justify-content: space-evenly
+		.btn
+			max-height: 15%
+			min-height: 10%
+			max-width: 22.5%
+			@media screen and (max-width: 780px)
+				font-size: 1em
+			@media screen and (max-width: 400px)
+				font-size: 1.15em
 
-@keyframes bounce-in
-	0%
-		transform: scale(0)
-	100% 
-		transform: scale(1)
+	.product__report-toogle
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		margin-top: 20px
+		background: linear-gradient(100deg, rgba(255, 255, 255, 0.10) 0%, rgba(171, 190, 215, 0.10) 100%)
+		box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
+		padding: 10px 0
+		transition: transform 1s
+		position: relative
+		border-radius: 1em
+		padding-left: 0.8vw
+		cursor: pointer
+		&:hover
+			background: hsl(35 10% 30% / 0.15)
+		&:active
+			transform: translateY(4px)
+			box-shadow: none
+	.product__report
+		transition: 0.25s
+		height: 0
+		overflow: hidden
+		display: flex
+		flex-direction: column
+		text-align: justify
+		justify-content: center
+		align-items: center
+		margin: 0 auto
+		width: 100%
+		p
+			padding: 10px
+		.report-view
+			min-width: 100%
+			min-height: 80vh
+			box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.10)
+			border-radius: 20px
+			@media screen and (max-width: 800px)
+				min-height: 60vh
+				min-width: 100%
+	.bounce-enter-active 
+		animation: bounce-in 1.5s
+
+	@keyframes bounce-in
+		0%
+			transform: scale(0)
+		100% 
+			transform: scale(1)
 </style>

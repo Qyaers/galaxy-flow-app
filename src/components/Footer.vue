@@ -8,13 +8,17 @@
 				<p>© 2023-{{ currentYear }} Galaxy Flow. Все права защищены</p>
 			</div>
 			<div class="footer__social-media">
-				<p>Наши контакты:</p>
+				<p>Наши контакты</p>
 				<div class="social-media__icons">
 					<div class="icons-items" v-for="(item, index) in  image " :key="index">
 						<a :href=item.link target="_blank">
 							<img class="icons__item" :onclick="item.event" :src="item.icon" alt="socialmediaimage">
 						</a>
 					</div>
+				</div>
+				<div class="social-media__text">
+					<p>element-global18@yandex.ru</p>
+					<p>+7 922 520-19-00</p>
 				</div>
 			</div>
 		</div>
@@ -90,13 +94,18 @@ export default {
 		display: flex
 		flex-direction: row
 		align-items: center
+		justify-content: center
 		.icons__item
 			padding-left: 0.5vw
 			max-width: 80px
 			max-height: 80px
+	.social-media__text
+		p
+			text-align: right
 .footer__info
 	display: flex
 	flex-direction: column
+	justify-content: space-between
 	p
 		&:last-child
 			padding-bottom: 10px
