@@ -88,7 +88,6 @@
 					</div>
 					<div class="timeline__middle">
 					</div>
-
 					<div class="timeline__component">
 						<div class="timeline__date timeline__date--right">
 						</div>
