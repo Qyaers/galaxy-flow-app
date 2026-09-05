@@ -28,7 +28,7 @@ npm run build
 ---
 
 <details>
-<summary><b>🇺🇸 Click to open the English Version (Нажмите, чтобы открыть версию на английском)</b></summary>
+<summary><b>EU Click to open the English Version (Нажмите, чтобы открыть версию на английском)</b></summary>
 <br>
 
 # Galaxy Flow — Financial Analytics Showcase Platform
