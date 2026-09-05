@@ -14,7 +14,7 @@
 ## 🛠️ Команды проекта
 ```bash
 # Клонирование и установка зависимостей
-git clone https://github.com
+git clone https://github.com/Qyaers/galaxy-flow-app
 cd galaxy-flow-app
 npm install
 
