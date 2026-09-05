@@ -39,9 +39,15 @@
 		</div>
 		<div ref="product_report" class="product__report">
 			<p>*если не загружается отчёт попробуйте переключить сеть с Wifi на мобильную или наоборот</p>
-			<iframe class="report-view" title="Report Section"
-				src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYTdhMmQ1N2YtMTE4OC00NzFlLWI0ZDEtMjIyM2U1OTVmMWQ1IiwidCI6ImI4MmQ2N2FmLWJmMGQtNGJjOS04Y2QxLWE0ZWQwZTBlMzVjOSIsImMiOjl9&pageName=ReportSectioneb70caf7e92ea1477416"
-				frameborder="0" allowFullScreen="true"></iframe>
+			<iframe 
+					class="report-view" 
+					title="Report Section"
+					src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYTdhMmQ1N2YtMTE4OC00NzFlLWI0ZDEtMjIyM2U1OTVmMWQ1IiwidCI6ImI4MmQ2N2FmLWJmMGQtNGJjOS04Y2QxLWE0ZWQwZTBlMzVjOSIsImMiOjl9&pageName=ReportSectioneb70caf7e92ea1477416"
+					frameborder="0" 
+					allowFullScreen="true"
+					loading="lazy"
+					sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+			></iframe>
 		</div>
 	</div>
 </template>
@@ -140,7 +146,6 @@ export default {
 			}
 		},
 		toggleFinReport(itemClass) {
-			let toogledItem = document.querySelectorAll(`.${itemClass}`)
 			if (this.isOpen) {
 				this.collapse();
 			} else {
