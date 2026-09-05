@@ -35,6 +35,8 @@ npm run build
 
 The platform serves as a production-ready presentation layer for financial products, featuring direct integration with live enterprise business intelligence reports.
 
+**🌐 Live Demo:** [galaxyflow.ru](https://galaxyflow.ru)
+
 ## 🚀 Key Features & Tech Specs
 - **Microsoft Power BI Integration:** Embedded a heavy external analytical dashboard via `<iframe>`. Optimized performance using native deferred rendering (`loading="lazy"`) and secured the context via strict HTML5 sandboxing (`sandbox="allow-scripts allow-same-origin allow-popups allow-forms"`).
 - **UI Logic (Tabs & Disclosures):** Tab switching and smooth accordion expansion up to `100%` height are managed directly via inline style manipulation using Vue `$refs` paired with native CSS transitions.
