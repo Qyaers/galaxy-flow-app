@@ -14,7 +14,7 @@
 ## 🛠️ Команды проекта
 ```bash
 # Клонирование и установка зависимостей
-git clone https://github.com
+git clone https://github.com/Qyaers/galaxy-flow-app
 cd galaxy-flow-app
 npm install
 
@@ -46,7 +46,7 @@ The platform serves as a production-ready presentation layer for financial produ
 ## 🛠️ Quick Start
 ```bash
 # Clone the repository and install dependencies
-git clone https://github.com
+git clone https://github.com/Qyaers/galaxy-flow-app
 cd galaxy-flow-app
 npm install
 
