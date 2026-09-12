@@ -1,7 +1,13 @@
 <template>
 	<div class="oddc-container">
-		<video class="oddc__video" preload loop autoplay muted>
-			<source src="../assets/ODDC.mp4">
+		<video class="oddc__video"
+			loop 
+			autoplay 
+			muted
+			playsinline
+			preload="auto"
+		>
+			<source src="../assets/ODDC.webm">
 		</video>
 		<div class="oddc__info">
 			<div class="main-info">

@@ -1,7 +1,13 @@
 <template>
 	<div class="bank-and-cash-container">
-		<video class="bank-and-cash__video" preload loop autoplay muted>
-			<source src="../assets/bankAndCash.mp4">
+		<video class="bank-and-cash__video"
+			loop 
+			autoplay 
+			muted
+			playsinline
+			preload="auto"
+		>
+			<source src="../assets/bankAndCash.webm">
 		</video>
 		<div class="bank-and-cash__info">
 			<div class="main-info">

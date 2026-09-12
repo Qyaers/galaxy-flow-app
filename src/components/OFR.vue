@@ -1,7 +1,13 @@
 <template>
 	<div class="ofr-container">
-		<video class="ofr__video" preload loop autoplay muted>
-			<source src="../assets/OFR.mp4">
+		<video class="ofr__video"
+			loop 
+			autoplay 
+			muted
+			playsinline
+			preload="auto"
+		>
+			<source src="../assets/OFR.webm">
 		</video>
 		<div class="ofr__info">
 			<div class="main-info">

@@ -1,7 +1,13 @@
 <template>
 	<div class="credits-and-loans-container">
-		<video class="credits-and-loans__video" preload loop autoplay muted>
-			<source src="../assets/creditsAndLoans.mp4">
+		<video class="credits-and-loans__video"
+			loop 
+			autoplay 
+			muted
+			playsinline
+			preload="auto"
+		>
+			<source src="../assets/creditsAndLoans.webm">
 		</video>
 		<div class="credits-and-loans__info">
 			<div class="main-info">

@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="header-menu">
-			<img class="header-menu__icon" src="../assets/logo.png" alt="logo">
+			<img class="header-menu__icon" src="../assets/logo.webp" alt="logo">
 			<nav class="nav">
 				<li class="nav__item" v-for="(item, index) in  links " :key="index">
 					<a class="nav__link" :href="item">{{ index }}</a>
@@ -62,7 +62,7 @@ export default {
 .sub-header 
 	height: 100vh
 	width: 100%
-	background-image: url('../assets/subHeaderBG.png')
+	background-image: url('../assets/subHeaderBG.webp')
 	background-size: cover
 	background-repeat: no-repeat
 	@media screen and (max-width: 800px)

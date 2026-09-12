@@ -95,7 +95,7 @@
 				</div>
 				<div class="timeline__component--bg timeline__ending">
 					<div class="timeline__paragraph"><span class="">Интерактивный отчёт Power BI </span><img
-							src="../assets/PowerBI.png" alt=""></div>
+							src="../assets/PowerBI.webp" alt=""></div>
 				</div>
 			</div>
 		</div>

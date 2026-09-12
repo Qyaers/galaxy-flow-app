@@ -32,16 +32,16 @@ export default {
 		return {
 			image: [
 				{
-					icon: "img/telegram.png", link: "https://t.me/galaxyflowofficial", event: "ym(96037055,'reachGoal','telegram');"
+					icon: "img/telegram.webp", link: "https://t.me/galaxyflowofficial", event: "ym(96037055,'reachGoal','telegram');"
 				},
 				{
-					icon: "img/viber.png", link: "viber://chat?number=+79225201900", event: "ym(96037055,'reachGoal','viber');"
+					icon: "img/viber.webp", link: "viber://chat?number=+79225201900", event: "ym(96037055,'reachGoal','viber');"
 				},
 				{
-					icon: "img/whatsapp.png", link: "https://wa.me/79225201900", event: "ym(96037055,'reachGoal','whatsapp');"
+					icon: "img/whatsapp.webp", link: "https://wa.me/79225201900", event: "ym(96037055,'reachGoal','whatsapp');"
 				},
 				{
-					icon: "img/email.png", link: "mailto:element-global18@yandex.ru", event: "ym(96037055,'reachGoal','email');"
+					icon: "img/email.webp", link: "mailto:element-global18@yandex.ru", event: "ym(96037055,'reachGoal','email');"
 				}
 			],
 		}

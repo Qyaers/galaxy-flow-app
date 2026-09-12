@@ -4,11 +4,11 @@
 			<h2>Наш продукт</h2>
 		</div>
 		<video class="product__preview-vid" preload loop autoplay muted>
-			<source src="../assets/mainView.mp4">
+			<source src="../assets/mainView.webm">
 		</video>
 		<div class="product__feat">
 			<div class="feat__container" v-for="item in featchers" :key="index">
-				<img class="feat__img" src="../assets/featImg.png" alt="иконка фичи">
+				<img class="feat__img" src="../assets/featImg.webp" alt="иконка фичи">
 				<div class="feat__text">
 					<p>{{ item }}</p>
 				</div>
@@ -101,31 +101,31 @@ export default {
 					title: "Особенности продукта",
 					text: "Данные из 1С в интерактивном формате. Бесплатная настройка. Бесплатная поддержка",
 					class: "item-direction",
-					img: "img/Dashboard.png"
+					img: "img/Dashboard.webp"
 				},
 				{
 					title: "Консолидируй данные",
 					text: "В отчёте можно объединить данные  по неограниченному количеству компаний",
 					class: "item-direction-reverse",
-					img: "img/Calculator.png"
+					img: "img/Calculator.webp"
 				},
 				{
 					title: "Увеличь эффективность бизнеса",
 					text: "Отслеживай финансовые показатели компании, контролируй банк и кассу, следи за кредитами и займами",
 					class: "item-direction",
-					img: "img/Data.png"
+					img: "img/Data.webp"
 				},
 				{
 					title: "Защита информации",
 					text: "На каждом этапе формирования отчёта ваша информация под защитой. Все файлы при передаче шифруются",
 					class: "item-direction-reverse",
-					img: "img/Protection.png"
+					img: "img/Protection.webp"
 				},
 				{
 					title: "Соответствие стандартам РСБУ",
 					text: "Исходные данные для отчёта формируются в 1С Предприятие в соответствии с учётной политикой компании",
 					class: "item-direction",
-					img: "img/BD.png"
+					img: "img/BD.webp"
 				},
 			],
 			disabledBtn: true,
